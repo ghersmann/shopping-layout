@@ -1,0 +1,39 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Quicksand;
+  src: url(./fonts/Quicksand-VariableFont_wght.ttf) format(truetype);
+}
+
+html {
+  font-family: Quicksand, "Times New Roman", Times, serif;
+  margin: 0 auto;
+  width: 80vw;
+  background-color: hotpink;
+}
+
+h1 {
+  font-family: inherit;
+  font-size: 4rem;
+  font-style: oblique;
+}
+
+h2 {
+  font-family: inherit;
+  font-size: 3rem;
+  font-style: oblique;
+}
+
+p {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.main-flex {
+  display: flex;
+  justify-content: space-around;
+}
