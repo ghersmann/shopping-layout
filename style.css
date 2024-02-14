@@ -9,11 +9,14 @@
   src: url(./fonts/Quicksand-VariableFont_wght.ttf) format(truetype);
 }
 
+/* General Styles */
+
 html {
-  font-family: Quicksand, "Times New Roman", Times, serif;
+  display: block;
   margin: 0 auto;
-  width: 80vw;
+  width: 98vw;
   background-color: #f5f5f5;
+  font-family: Quicksand, "Times New Roman", Times, serif;
   font-size: 12px;
 }
 
@@ -42,30 +45,30 @@ a {
   color: gray;
 }
 
-.main-flex {
-  display: flex;
-  justify-content: space-between;
-}
+/* Container for individual shoes */
 
 .article-wrap {
   background-color: white;
   padding: 0;
   margin: 0;
+  min-width: 350px;
   width: 25vw;
   border-radius: 2rem;
 }
+
+/* Shoe image styling */
 
 .shoe-image img {
   border-radius: 2rem 2rem 0 0;
 }
 
 .shoe-image {
-  border-radius: 40px;
   position: relative;
   width: 100%;
-  height: auto;
   margin: 0;
 }
+
+/* "Free shipping % Just one Left" sign on top right corner of shoe image */
 
 .aside-blob {
   background-color: rgba(255, 255, 255, 0.7);
@@ -77,6 +80,8 @@ a {
   font-size: 0.8rem;
   font-weight: 600;
 }
+
+/* Photo caption with background gradient */
 
 .photo-caption {
   position: absolute;
@@ -90,6 +95,8 @@ a {
   font-size: 0.8rem;
 }
 
+/* Gray information field wrapper */
+
 .info-field {
   position: relative;
   background-color: #f5f5f5;
@@ -97,6 +104,8 @@ a {
   margin: 1rem;
   border-radius: 1rem;
 }
+
+/* Price Tag */
 
 .price-tag {
   background-color: white;
@@ -108,10 +117,13 @@ a {
   font-weight: 500;
 }
 
+/* Size & Quantity flexbox */
+
 .size-quan-flex {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
+  flex-shrink: 1;
 }
 .size-menu {
   font-size: 1.2rem;
@@ -125,6 +137,8 @@ select {
   background-color: white;
 }
 
+/* Color picker flexboxes with colored circles */
+
 .color-picker-asics {
   display: flex;
   justify-content: flex-start;
@@ -134,69 +148,46 @@ select {
   margin: 1rem 0;
 }
 
-.blue-dot {
+.dot {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin: 0 0.7rem;
+}
+
+.dot.blue {
   background-color: #1f55af;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin: 0 0.7rem;
 }
 
-.red-dot {
+.dot.red {
   background-color: #da4841;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin: 0 0.7rem;
 }
 
-.black-dot {
+.dot.black {
   background-color: black;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin: 0 0.7rem;
 }
 
-.green-black-dot {
+.dot.green-black {
   background-image: linear-gradient(90deg, #979637 50%, black 50%);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin: 0 0.7rem;
 }
 
-.blue-black-dot {
+.dot.blue-black {
   background-image: linear-gradient(90deg, #568ad7 50%, black 50%);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin: 0 0.7rem;
 }
 
-.pink-black-dot {
+.dot.pink-black {
   background-image: linear-gradient(90deg, #d2628b 50%, black 50%);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin: 0 0.7rem;
 }
 
-.red-white-dot {
+.dot.red-white {
   background-image: linear-gradient(90deg, #cd3328 50%, white 50%);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin: 0 0.7rem;
 }
 
-.black-white-dot {
+.dot.black-white {
   background-image: linear-gradient(90deg, black 50%, white 50%);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin: 0 0.7rem;
 }
+
+/* "Add to Cart"-button with hover effect */
 
 .add-to-cart {
   background-color: #485fb9;
@@ -215,13 +206,60 @@ select {
   background-color: #384a93;
 }
 
+/* Footer with information */
+
 .footer-content {
   color: gray;
   margin-top: 2rem;
 }
 
+/* Printing is bad for the environement message, only visible on prints */
+
 @media screen {
   .printit {
     display: none;
+  }
+}
+
+@media screen and (min-width: 666px) {
+  /* Flexbox for two articles */
+
+  .main-flex {
+    margin: 0 auto;
+    width: 98vw;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Container for individual shoes */
+
+  .article-wrap {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    min-width: 300px;
+    width: 30vw;
+    border-radius: 2rem;
+  }
+  .size-quan-flex {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1165px) {
+  /* Flexbox for three articles */
+
+  .main-flex {
+    margin: 0 auto;
+    width: 98vw;
+    display: flex;
+    min-width: 350px;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .size-quan-flex {
+    display: grid;
   }
 }
